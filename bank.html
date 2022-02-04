@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bank &mdash; SRL  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Magic" href="magic.html" />
+    <link rel="prev" title="TRSSilverScreen.IsOpen" href="silverscreen.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> SRL
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="mouse.html">Mouse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tbox.html">TBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wrappers.html">Wrappers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drawing.html">Drawing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcircle.html">TCircle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color.html">Color</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keyboard.html">Keyboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpoint.html">TPoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tboxarrays.html">TBoxArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="string.html">String</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time.html">Time</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pixelshift.html">Pixelshift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpointarrays.html">TPointArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trectangle.html">TRectangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integerarrays.html">TIntegerArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extendedarrays.html">TExtendedArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random.html">Random</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="itemfinder.html">Item Finder</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="silverscreen.html">TRSSilverScreen.IsOpen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="silverscreen.html#trssilverscreen-isopen-waittime-int32">TRSSilverScreen.IsOpen(WaitTime: Int32)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="silverscreen.html#trssilverscreen-close">TRSSilverScreen.Close</a></li>
+<li class="toctree-l1"><a class="reference internal" href="silverscreen.html#trssilverscreen-setquantity">TRSSilverScreen.SetQuantity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="silverscreen.html#trssilverscreen-cancraftitem">TRSSilverScreen.CanCraftItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="silverscreen.html#trssilverscreen-clickitem">TRSSilverScreen.ClickItem</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Bank</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#bank-isopen">Bank.IsOpen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bank-close">Bank.Close</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bank-setup">Bank.Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bank-search">Bank.Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bank-counttabs">Bank.CountTabs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bank-getcurrenttab">Bank.GetCurrentTab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bank-opentab">Bank.OpenTab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsbank-scrolltoitem">TRSBank.ScrollToItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">TRSBank.ScrollToItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">TRSBank.ScrollToItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bank-withdrawitem">Bank.WithdrawItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bank-depositall">Bank.DepositAll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#var-bank">var Bank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gametabs-open">GameTabs.Open</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">GameTabs.Open</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="magic.html">Magic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="craftscreen.html">TRSCraftScreen.IsOpen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="craftscreen.html#trscraftscreen-isopen-waittime-int32">TRSCraftScreen.IsOpen(WaitTime: Int32)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="craftscreen.html#trscraftscreen-close">TRSCraftScreen.Close</a></li>
+<li class="toctree-l1"><a class="reference internal" href="craftscreen.html#trscraftscreen-setquantity">TRSCraftScreen.SetQuantity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="craftscreen.html#trscraftscreen-cancraftitem">TRSCraftScreen.CanCraftItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="craftscreen.html#trscraftscreen-clickitem">TRSCraftScreen.ClickItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grandexchange.html">BankScreen.Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="login.html">Login</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mainscreen.html">MainScreen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chat.html">Chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combat.html">Combat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combat.html#minimap">Minimap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mm2ms.html">Minimap to Mainscreen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="depositbox.html">TRSDepositBox.CountSlots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="antiban.html">Antiban</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smithscreen.html">TRSSmithScreen.IsOpen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smithscreen.html#trssmithscreen-isopen-waittime-int32">TRSSmithScreen.IsOpen(WaitTime: Int32)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smithscreen.html#trssmithscreen-close">TRSSmithScreen.Close</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smithscreen.html#trssmithscreen-setquantity">TRSSmithScreen.SetQuantity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smithscreen.html#trssmithscreen-cansmithitem">TRSSmithScreen.CanSmithItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smithscreen.html#trssmithscreen-clickitem">TRSSmithScreen.ClickItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rsclient.html">RSClient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc.html">Misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prayer.html">Prayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prayer.html#minimap">Minimap</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walker.html">Walker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webber.html">Webber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webgraph.html">Web Graph</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SRL</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Bank</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/bank.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bank">
+<h1>Bank<a class="headerlink" href="#bank" title="Permalink to this headline"></a></h1>
+<p>Methods to interact with the Bank.</p>
+<hr class="docutils" />
+<section id="bank-isopen">
+<h2>Bank.IsOpen<a class="headerlink" href="#bank-isopen" title="Permalink to this headline"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">IsOpen</span><span class="p">(</span><span class="n">WaitForItems</span><span class="o">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="k">True</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Returns true if the Bank is visible.</p>
+<p><strong>WaitForItems</strong> determines if the method waits up to one second for item to appears.
+There can be a small delay before items are visible.</p>
+</section>
+<hr class="docutils" />
+<section id="bank-close">
+<h2>Bank.Close<a class="headerlink" href="#bank-close" title="Permalink to this headline"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">Close</span><span class="p">(</span><span class="n">PressEscape</span><span class="o">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="k">False</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Closes the bank, Depending on <cite>PressEscape</cite> the function will either click the button
+or press backspace.</p>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span> <span class="n">Bank</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="bank-setup">
+<h2>Bank.Setup<a class="headerlink" href="#bank-setup" title="Permalink to this headline"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span> <span class="nc">Bank</span><span class="o">.</span><span class="nf">Setup</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Initializes Bank variables.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is automatically called on the <strong>Bank</strong> variable.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="bank-search">
+<h2>Bank.Search<a class="headerlink" href="#bank-search" title="Permalink to this headline"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">Search</span><span class="p">(</span><span class="n">Item</span><span class="o">:</span> <span class="k">String</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Searches for an item.</p>
+<section id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">Bank</span><span class="o">.</span><span class="n">Search</span><span class="p">(</span><span class="s">&#39;logs&#39;</span><span class="p">)</span><span class="o">;</span> <span class="c1">// Search for logs</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="bank-counttabs">
+<h2>Bank.CountTabs<a class="headerlink" href="#bank-counttabs" title="Permalink to this headline"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">CountTabs</span><span class="o">:</span> <span class="n">Int32</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Counts the existing bank tabs.</p>
+<section id="id2">
+<h3>Example<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span> <span class="n">Bank</span><span class="o">.</span><span class="n">CountTabs</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="bank-getcurrenttab">
+<h2>Bank.GetCurrentTab<a class="headerlink" href="#bank-getcurrenttab" title="Permalink to this headline"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">GetCurrentTab</span><span class="o">:</span> <span class="n">Int32</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Get the current active bank tab.</p>
+<section id="id3">
+<h3>Example<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span> <span class="n">Bank</span><span class="o">.</span><span class="n">GetCurrentTab</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="bank-opentab">
+<h2>Bank.OpenTab<a class="headerlink" href="#bank-opentab" title="Permalink to this headline"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">OpenTab</span><span class="p">(</span><span class="n">Tab</span><span class="o">:</span> <span class="n">Int32</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Open the specified bank tab.</p>
+<section id="id4">
+<h3>Example<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">Bank</span><span class="o">.</span><span class="n">OpenTab</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsbank-scrolltoitem">
+<h2>TRSBank.ScrollToItem<a class="headerlink" href="#trsbank-scrolltoitem" title="Permalink to this headline"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">ScrollToItem</span><span class="p">(</span><span class="n">Item</span><span class="o">:</span> <span class="n">TRSItem</span><span class="o">;</span> <span class="n">Out</span> <span class="n">ItmBox</span><span class="o">:</span> <span class="n">TBox</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Sets the scroll bar in the bank to its top position then drags the scroll bar until the
+given TRSItem is found or the scroll bar is dragged to the max position.</p>
+<section id="id5">
+<h3>Example<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">Bank</span><span class="o">.</span><span class="n">ScrollToItem</span><span class="p">(</span><span class="s">&#39;Lobster pot&#39;</span><span class="o">,</span> <span class="n">ItmBox</span><span class="p">)</span> <span class="k">then</span>
+  <span class="n">Mouse</span><span class="o">.</span><span class="n">Move</span><span class="p">(</span><span class="n">ItmBox</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id6">
+<h2>TRSBank.ScrollToItem<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">ScrollToItem</span><span class="p">(</span><span class="n">Item</span><span class="o">:</span> <span class="n">TRSItem</span><span class="o">;</span> <span class="n">Out</span> <span class="n">ItmPoint</span><span class="o">:</span> <span class="n">TPoint</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Same as TRSBank.ScrollToItem however a TPoint of the middle of the found item is provided.</p>
+<section id="id7">
+<h3>Example<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">Bank</span><span class="o">.</span><span class="n">ScrollToItem</span><span class="p">(</span><span class="s">&#39;Lobster pot&#39;</span><span class="o">,</span> <span class="n">ItmPoint</span><span class="p">)</span> <span class="k">then</span>
+  <span class="n">Mouse</span><span class="o">.</span><span class="n">Move</span><span class="p">(</span><span class="n">ItmPoint</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id8">
+<h2>TRSBank.ScrollToItem<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">ScrollToItem</span><span class="p">(</span><span class="n">Item</span><span class="o">:</span> <span class="n">TRSItem</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Same as TRSBank.ScrollToItem however only confirmation is provided.</p>
+<section id="id9">
+<h3>Example<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">Bank</span><span class="o">.</span><span class="n">ScrollToItem</span><span class="p">(</span><span class="s">&#39;Lobster pot&#39;</span><span class="p">)</span> <span class="k">then</span>
+  <span class="nb">writeln</span><span class="p">(</span><span class="s">&#39;Found the lobster pot&#39;</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="bank-withdrawitem">
+<h2>Bank.WithdrawItem<a class="headerlink" href="#bank-withdrawitem" title="Permalink to this headline"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">WithdrawItem</span><span class="p">(</span><span class="n">Item</span><span class="o">:</span> <span class="n">TRSBankWithdrawItem</span><span class="o">;</span> <span class="n">UseQuantityButtons</span><span class="o">:</span> <span class="kt">Boolean</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Finds and withdraws an item.</p>
+<section id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline"></a></h3>
+<dl class="simple">
+<dt>Item</dt><dd><p>TRSBankWithdrawItem variable to withdraw.</p>
+</dd>
+<dt>UseQuantityButtons</dt><dd><p>Determines if to use the 1,5,10,X,ALL <cite>Quantity</cite> buttons.</p>
+</dd>
+</dl>
+</section>
+<section id="id10">
+<h3>Example<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">var</span>
+  <span class="n">ItemToWithdraw</span><span class="o">:</span> <span class="n">TRSBankWithdrawItem</span><span class="o">;</span>
+
+<span class="n">ItemToWithdraw</span><span class="o">.</span><span class="n">Item</span> <span class="o">:=</span> <span class="s">&#39;Iron full helm&#39;</span><span class="o">;</span>
+<span class="n">ItemToWithdraw</span><span class="o">.</span><span class="n">Quantity</span> <span class="o">:=</span> <span class="mi">5</span><span class="o">;</span>
+<span class="n">ItemToWithdraw</span><span class="o">.</span><span class="n">Noted</span> <span class="o">:=</span> <span class="k">False</span><span class="o">;</span>
+
+<span class="n">Bank</span><span class="o">.</span><span class="n">WithdrawItem</span><span class="p">(</span><span class="n">ItemToWithdraw</span><span class="o">,</span> <span class="k">True</span><span class="p">)</span><span class="o">;</span>
+
+<span class="c1">// OR you can shorthand by passing an open array.</span>
+
+<span class="n">Bank</span><span class="o">.</span><span class="n">WithdrawItem</span><span class="p">([</span><span class="s">&#39;Iron full helm&#39;</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="k">False</span><span class="p">]</span><span class="o">,</span> <span class="k">True</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="bank-depositall">
+<h2>Bank.DepositAll<a class="headerlink" href="#bank-depositall" title="Permalink to this headline"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">DepositAll</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Depositis your inventory by clicking the deposit inventory button</p>
+</section>
+<hr class="docutils" />
+<section id="var-bank">
+<h2>var Bank<a class="headerlink" href="#var-bank" title="Permalink to this headline"></a></h2>
+<blockquote>
+<div><p>Global Bank variable.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="gametabs-open">
+<h2>GameTabs.Open<a class="headerlink" href="#gametabs-open" title="Permalink to this headline"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSGameTabs</span><span class="o">.</span><span class="nf">GetCurrentTab</span><span class="o">:</span> <span class="n">ERSGametab</span><span class="o">;</span> <span class="kp">override</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Overrides <strong>GameTabs.GetCurrentTab</strong> to return the inventory tab if bank is open.</p>
+</section>
+<hr class="docutils" />
+<section id="id11">
+<h2>GameTabs.Open<a class="headerlink" href="#id11" title="Permalink to this headline"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSGameTabs</span><span class="o">.</span><span class="nf">Open</span><span class="p">(</span><span class="n">Tab</span><span class="o">:</span> <span class="n">ERSGameTab</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span> <span class="kp">override</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Overrides <strong>GameTabs.Open</strong> to close the bank if the bank open.</p>
+<hr class="docutils" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="silverscreen.html" class="btn btn-neutral float-left" title="TRSSilverScreen.IsOpen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="magic.html" class="btn btn-neutral float-right" title="Magic" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, SRL Group.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

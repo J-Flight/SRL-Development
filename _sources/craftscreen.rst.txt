@@ -1,0 +1,110 @@
+
+TRSCraftScreen.IsOpen
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSCraftScreen.IsOpen: Boolean;
+
+Returns true if the gold crafting screen is visible.
+
+Example
+-------
+.. code-block:: pascal  
+
+  if CraftScreen.IsOpen() then
+    CraftScreen.ClickItem(ERSCraftItem.GOLD_BRACELET, -1);
+
+
+------------
+
+TRSCraftScreen.IsOpen(WaitTime: Int32)
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSCraftScreen.IsOpen(WaitTime: Int32): Boolean;
+
+Returns true if the gold crafting screen is visible within "WaitTime".
+
+Example
+-------
+.. code-block:: pascal  
+
+  if CraftScreen.IsOpen(2000) then
+    Writeln('Crafting screen has been opened within 2 seconds');
+
+
+------------
+
+TRSCraftScreen.Close
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSCraftScreen.Close(PressEscape: Boolean = False): Boolean;
+
+Closes the gold crafting screen.  Depending on `PressEscape` the function will
+either click the button or press backspace.
+
+Example
+-------
+.. code-block:: pascal  
+
+  if CraftScreen.Close() then
+    Writeln('Closed the gold crafting screen');
+
+
+------------
+
+TRSCraftScreen.SetQuantity
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSCraftScreen.SetQuantity(Amount: Int32): Boolean;
+
+Sets the interface quantity to the set amount.  Acceptable parameters
+include 1,5,10,X (custom amount) and -1 for 'All'.
+
+Example
+-------
+.. code-block:: pascal  
+
+  CraftScreen.SetQuantity(-1);
+
+
+------------
+
+TRSCraftScreen.CanCraftItem
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSCraftScreen.CanCraftItem(CraftItem: ERSCraftItem): Boolean;
+
+Returns if the given ERSCraftItem can be crafted.
+
+Example
+-------
+.. code-block:: pascal  
+
+  if CraftScreen.CanCraftItem(ERSCraftItem.RUBY_RING) then
+    CraftScreen.ClickItem(ERSCraftItem.RUBY_RING, 5);
+
+
+------------
+
+TRSCraftScreen.ClickItem
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSCraftScreen.ClickItem(Item: TRSItem; Quantity: Int32): Boolean;
+
+Sets the desired quantity then clicks on the given ERSCraftItem on the gold crafting
+interface.  Returns false if the given ERSCraftItem is not found on the interface.
+
+Example
+-------
+.. code-block:: pascal  
+
+  if CraftScreen.ClickItem((ERSCraftItem.RUBY_AMULET, 5) then
+    Writeln('Beginning crafting...');
+
+
+------------

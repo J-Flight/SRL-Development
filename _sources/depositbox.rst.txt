@@ -1,0 +1,13 @@
+
+TRSDepositBox.CountSlots
+~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSDepositBox.CountSlots(): Int32;
+
+Counts the total number of individual items in the depositbox
+
+.. note:: This is automatically called on the **Bank** variable.
+
+
+------------

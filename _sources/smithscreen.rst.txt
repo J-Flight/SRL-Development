@@ -1,0 +1,111 @@
+
+TRSSmithScreen.IsOpen
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSSmithScreen.IsOpen: Boolean;
+
+Returns true if the smithing screen is visible.
+
+Example
+-------
+.. code-block:: pascal  
+
+  if SmithScreen.IsOpen() then
+    SmithScreen.ClickItem('Mithril platebody', -1);
+
+
+------------
+
+TRSSmithScreen.IsOpen(WaitTime: Int32)
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSSmithScreen.IsOpen(WaitTime: Int32): Boolean;
+
+Returns true if the smithing screen is visible within "WaitTime".
+
+Example
+-------
+.. code-block:: pascal  
+
+  if SmithScreen.IsOpen(2000) then
+    Writeln('Smithing screen has been opened within 2 seconds');
+
+
+------------
+
+TRSSmithScreen.Close
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSSmithScreen.Close(PressEscape: Boolean = False): Boolean;
+
+Closes the smithing screen.  Depending on `PressEscape` the function will
+either click the button or press backspace.
+
+Example
+-------
+.. code-block:: pascal  
+
+  if SmithScreen.Close() then
+    Writeln('Closed the smithing screen');
+
+
+------------
+
+TRSSmithScreen.SetQuantity
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSSmithScreen.SetQuantity(Amount: Int32): Boolean;
+
+Sets the interface quantity to the set amount.  Acceptable parameters
+include 1,5,10,X (custom amount) and -1 for 'All'.
+
+Example
+-------
+.. code-block:: pascal  
+
+  SmithScreen.SetQuantity(-1);
+
+
+------------
+
+TRSSmithScreen.CanSmithItem
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSSmithScreen.CanSmithItem(Item: TRSItem; out ItemBox: TBox): Boolean;
+
+Returns if the given TRSItem can be smithed.  If so then a TBox of the disired item
+is returned.
+
+Example
+-------
+.. code-block:: pascal  
+
+  if SmithScreen.CanSmithItem('Iron warhammer', ItmBox) then
+    Mouse.Move(ItmBox);
+
+
+------------
+
+TRSSmithScreen.ClickItem
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSSmithScreen.ClickItem(Item: TRSItem; Quantity: Int32): Boolean;
+
+Sets the desired quantity then clicks on the given TRSItem on the smithing screen.
+Returns false if the given TRSItem is not found on the screen.
+
+Example
+-------
+.. code-block:: pascal  
+
+  if SmithScreen.ClickItem('Rune scimitar', -1) then
+    Writeln('Smithing items...');
+
+
+------------

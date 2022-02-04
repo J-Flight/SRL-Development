@@ -1,0 +1,18 @@
+ Check for directory 
+
+------------
+ Check for existing script config 
+
+------------
+ Save player settings 
+
+------------
+ Save script settings 
+
+------------
+ Check for directory 
+
+------------
+ Check for existing script config 
+
+------------

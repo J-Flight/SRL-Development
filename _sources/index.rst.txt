@@ -1,0 +1,75 @@
+Welcome to SRL documentation!
+===============================
+
+.. toctree::
+   :maxdepth: 2
+
+	:caption: UTILS
+
+   mouse
+   tbox
+   wrappers
+   drawing
+   tcircle
+   color
+   keyboard
+   tpoint
+   tboxarrays
+   string
+   time
+   pixelshift
+   math
+   tpointarrays
+   trectangle
+   integerarrays
+   extendedarrays
+   random
+
+-----------
+
+.. toctree::
+   :maxdepth: 2
+
+	:caption: OSR -> ITEMFINDER
+
+   itemfinder
+
+-----------
+
+.. toctree::
+   :maxdepth: 2
+
+	:caption: OSR
+
+   silverscreen
+   bank
+   magic
+   craftscreen
+   grandexchange
+   login
+   mainscreen
+   chat
+   combat
+   inventory
+   mm2ms
+   scriptconfig
+   depositbox
+   antiban
+   smithscreen
+   rsclient
+   misc
+   prayer
+
+-----------
+
+.. toctree::
+   :maxdepth: 2
+
+	:caption: OSR -> WALKER
+
+   walker
+   webber
+   webgraph
+
+-----------
+

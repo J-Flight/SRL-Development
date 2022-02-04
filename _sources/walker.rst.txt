@@ -1,0 +1,177 @@
+
+Walker
+======
+
+
+------------
+
+TRSWalker.Setup
+~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure TRSWalker.Setup(Map: String; Manage: Boolean = True; Scaling: Int32 = 10);
+
+Setup a RSWalker variable.
+This only needs calling once per variable so it's suggested to use a global variable.
+
+Parameters
+----------
+
+Map
+	File path to an image or a map name found in *SRL/osr/walker/maps*.
+
+Manage  
+  Automatically free walker at the end of the script. Only works if the TRSWalker variable is global. (Default: True)
+    
+Scaling
+	Multipler to downscale the map. Lower will bring more accuracy at the cost of speed. (Default: 9)
+	
+Example
+-------
+.. code-block:: pascal  
+
+  var Walker: TRSWalker;
+
+  Walker.Setup('world'); // Setup using the world map found in the maps directory
+
+
+------------
+
+TRSWalker.GetMyPos
+~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSWalker.GetMyPos: TPoint;
+
+Returns the players current position on the loaded map.
+
+Example
+-------
+.. code-block:: pascal  
+
+  WriteLn(Walker.GetMyPos());
+  
+  // Check to see the match percentage if needed
+  WriteLn(Walker.Similarity);
+
+
+------------
+
+TRSWalker.WalkPath
+~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSWalker.WalkPath(Path: TPointArray; WaitUntilDistance: Int32 = 0): Boolean;
+
+Walks a path of points taken from the loaded map. 
+
+Parameters
+----------
+
+Path
+	Array of points taken from the loaded map to walk. Must be ordered from start to finish.	
+	
+WaitUntilDistance
+	Determines when the method returns once the final point has been clicked. Default value: 0.
+	
+	| *WaitUntilDistance=0* waits until the player has reached the final point.
+	| *WaitUntilDistance=20* waits until the player is within 20 pixels of the final point.
+
+Example
+-------
+.. code-block:: pascal  
+
+  Walker.WalkPath([[100,100],[120,120],[140,140],[160,160],[180,180]]);
+
+
+------------
+
+TRSWalker.WalkBlind
+~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSWalker.WalkBlind(Destination: TPoint; WaitUntilDistance: Int32 = 0): Boolean;
+
+"Blindly" walks to a point taken from the loaded map.
+A straight line is generated between the player's position and destination which is then walked.
+
+Parameters
+----------
+
+Destination
+	Destination point taken from the loaded map.
+	
+WaitUntilDistance
+	Determines when the method returns once the final point has been clicked. Default value: 0.
+	
+	| *WaitUntilDistance=0* waits until the player has reached the final point.
+	| *WaitUntilDistance=20* waits until the player is within 20 pixels of the final point.
+
+Example
+-------
+.. code-block:: pascal  
+
+  Walker.WalkBlind([300, 300]);
+
+
+------------
+
+TRSWalker.WebWalk
+~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSWalker.WebWalk(Destination: TPoint; WaitUntilDistance: Int32 = 0; PathRandomness: Extended = 0): Boolean;
+
+Web walks to the destination point on the loaded map. Does **not** handle any obstacles.
+Please run ``webber.simba`` to see how webgraphs are built.
+
+Pre built webgraphs are available for "World" and "Zeah" when used.
+
+Parameters
+----------
+
+Destination
+	Destination point taken from the loaded map.
+	
+WaitUntilDistance
+	Determines when the method returns once the final point has been clicked. Default value: 0.
+	
+	| *WaitUntilDistance=0* waits until the player has reached the final point.
+	| *WaitUntilDistance=20* waits until the player is within 20 pixels of the final point.
+
+PathRandomness
+	Randomness to add to the path so the absoulte shortest path isn't always taken. Must be between 0..1
+
+Example
+-------
+.. code-block:: pascal  
+
+  var Walker: TRSWalker;
+
+  Walker.Setup('world');
+  Walker.WebWalk([4595, 3575]); // Lumbridge
+
+  // Or use a location from the webgraph
+  Walker.WebWalk(WorldWeb.LOCATION_LUMBRIDGE);
+
+
+------------
+
+TRSWalker.MSInMMArea(MSPt: TPoint; Area: TBox; MyPos: TPoint=[0,0])
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSWalker.MSInMMArea(MSPt: TPoint; Area: TBox; MyPos: TPoint=[0,0]): Boolean;
+
+Returns true if a mainscreen point "MSPt" is located within a specified area on the minimap.
+'Area' accepts world coordinates in TBox format, NOT local minimap coordinates.
+
+Example
+-------
+.. code-block:: pascal  
+
+  if RSW.MSInMMArea(GetBankerPt(), [3100,3200,3150,3250]) then
+    Writeln('Banker on MS is within reach!');
+
+
+------------

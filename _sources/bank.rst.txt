@@ -1,0 +1,252 @@
+
+Bank
+====
+Methods to interact with the Bank.
+
+
+------------
+
+Bank.IsOpen
+~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSBank.IsOpen(WaitForItems: Boolean = True): Boolean;
+
+Returns true if the Bank is visible.
+
+**WaitForItems** determines if the method waits up to one second for item to appears.
+There can be a small delay before items are visible.
+
+
+------------
+
+Bank.Close
+~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSBank.Close(PressEscape: Boolean = False): Boolean;
+
+Closes the bank, Depending on `PressEscape` the function will either click the button
+or press backspace.
+
+Example
+-------
+.. code-block:: pascal  
+
+ WriteLn Bank.Close();
+
+
+------------
+
+Bank.Setup
+~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure Bank.Setup;
+
+Initializes Bank variables.
+
+.. note:: This is automatically called on the **Bank** variable.
+
+
+------------
+
+Bank.Search
+~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSBank.Search(Item: String): Boolean;
+
+Searches for an item.
+
+Example
+-------
+.. code-block:: pascal  
+
+  Bank.Search('logs'); // Search for logs
+
+
+------------
+
+Bank.CountTabs
+~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSBank.CountTabs: Int32;
+
+Counts the existing bank tabs.
+
+Example
+-------
+.. code-block:: pascal  
+
+  WriteLn Bank.CountTabs;
+
+
+------------
+
+Bank.GetCurrentTab
+~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSBank.GetCurrentTab: Int32;
+
+Get the current active bank tab.
+
+Example
+-------
+.. code-block:: pascal  
+
+  WriteLn Bank.GetCurrentTab;
+
+
+------------
+
+Bank.OpenTab
+~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSBank.OpenTab(Tab: Int32): Boolean;
+
+Open the specified bank tab.
+
+Example
+-------
+.. code-block:: pascal  
+
+  Bank.OpenTab(0);
+
+
+------------
+
+TRSBank.ScrollToItem
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSBank.ScrollToItem(Item: TRSItem; Out ItmBox: TBox): Boolean;
+
+Sets the scroll bar in the bank to its top position then drags the scroll bar until the
+given TRSItem is found or the scroll bar is dragged to the max position.
+
+Example
+-------
+.. code-block:: pascal  
+
+  if Bank.ScrollToItem('Lobster pot', ItmBox) then
+    Mouse.Move(ItmBox);
+
+
+------------
+
+TRSBank.ScrollToItem
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSBank.ScrollToItem(Item: TRSItem; Out ItmPoint: TPoint): Boolean;
+
+Same as TRSBank.ScrollToItem however a TPoint of the middle of the found item is provided.
+
+Example
+-------
+.. code-block:: pascal  
+
+  if Bank.ScrollToItem('Lobster pot', ItmPoint) then
+    Mouse.Move(ItmPoint);
+
+
+------------
+
+TRSBank.ScrollToItem
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSBank.ScrollToItem(Item: TRSItem): Boolean;
+
+Same as TRSBank.ScrollToItem however only confirmation is provided.
+
+Example
+-------
+.. code-block:: pascal  
+
+  if Bank.ScrollToItem('Lobster pot') then
+    writeln('Found the lobster pot');
+
+
+------------
+
+Bank.WithdrawItem
+~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSBank.WithdrawItem(Item: TRSBankWithdrawItem; UseQuantityButtons: Boolean): Boolean;
+
+Finds and withdraws an item.
+
+Parameters
+----------
+
+Item
+	TRSBankWithdrawItem variable to withdraw.
+
+UseQuantityButtons  
+  Determines if to use the 1,5,10,X,ALL `Quantity` buttons.
+
+Example
+-------
+.. code-block:: pascal  
+
+  var
+    ItemToWithdraw: TRSBankWithdrawItem;
+    
+  ItemToWithdraw.Item := 'Iron full helm'; 
+  ItemToWithdraw.Quantity := 5;
+  ItemToWithdraw.Noted := False;  
+  
+  Bank.WithdrawItem(ItemToWithdraw, True);  
+  
+  // OR you can shorthand by passing an open array.
+  
+  Bank.WithdrawItem(['Iron full helm', 5, False], True);  
+
+
+------------
+
+Bank.DepositAll
+~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSBank.DepositAll: Boolean;
+
+Depositis your inventory by clicking the deposit inventory button
+
+
+------------
+
+var Bank
+~~~~~~~~
+  Global Bank variable.
+
+
+------------
+
+GameTabs.Open
+~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSGameTabs.GetCurrentTab: ERSGametab; override;
+
+Overrides **GameTabs.GetCurrentTab** to return the inventory tab if bank is open.
+
+
+------------
+
+GameTabs.Open
+~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSGameTabs.Open(Tab: ERSGameTab): Boolean; override;
+
+Overrides **GameTabs.Open** to close the bank if the bank open.
+
+
+------------
