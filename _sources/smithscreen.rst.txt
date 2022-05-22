@@ -91,21 +91,40 @@ Example
 
 ------------
 
-TRSSmithScreen.ClickItem
+TRSSmithScreen.IsItemHighlighted
 ~~~~~~~~~~~~
 .. code-block:: pascal
 
- function TRSSmithScreen.ClickItem(Item: TRSItem; Quantity: Int32): Boolean;
+ function TRSSmithScreen.IsItemHighlighted(Item: TRSItem): Boolean;
 
-Sets the desired quantity then clicks on the given TRSItem on the smithing screen.
-Returns false if the given TRSItem is not found on the screen.
+Returns if the given TRSItem is highlighted on the smithing interface.
 
 Example
 -------
 .. code-block:: pascal  
 
-  if SmithScreen.ClickItem('Rune scimitar', -1) then
-    Writeln('Smithing items...');
+  if SmithScreen.IsItemHighlighted('Steel platebody') then
+    Keyboard.PressKey(VK_SPACE);
+
+
+------------
+
+TRSSmithScreen.SmithItem
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSSmithScreen.SmithItem(Item: TRSItem; Quantity: Int32): Boolean;
+
+Sets the desired quantity then smiths the given TRSItem on the smithing interface.
+If the item is highlighted (previously smithed) then the spacebar is used,
+if not then the interface item is clicked.  Returns false if 'Item' is not found on the interface.
+
+Example
+-------
+.. code-block:: pascal  
+
+  if SmithScreen.SmithItem('Adamant platelegs', 5) then
+    Writeln('Beginning smithing...');
 
 
 ------------

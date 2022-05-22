@@ -91,20 +91,39 @@ Example
 
 ------------
 
-TRSSilverScreen.ClickItem
+TRSSilverScreen.IsItemHighlighted
 ~~~~~~~~~~~~
 .. code-block:: pascal
 
- function TRSSilverScreen.ClickItem(Item: TRSItem; Quantity: Int32): Boolean;
+ function TRSSilverScreen.IsItemHighlighted(Item: TRSItem): Boolean;
 
-Sets the desired quantity then clicks on the given TRSItem on the silver screen interface.
-Returns false if the given TRSItem is not found on the interface.
+Returns if the given TRSItem is highlighted on the silver crafting interface.
 
 Example
 -------
 .. code-block:: pascal  
 
-  if SilverScreen.ClickItem('Jade amulet (u)', 10) then
+  if SilverScreen.IsItemHighlighted('Unstrun symbol') then
+    Keyboard.PressKey(VK_SPACE);
+
+
+------------
+
+TRSSilverScreen.CraftItem
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSSilverScreen.CraftItem(Item: TRSItem; Quantity: Int32): Boolean;
+
+Sets the desired quantity then crafts on the given TRSItem on the silver screen interface.
+If the item is highlighted (previously crafted) then the spacebar is used,
+if not then the interface item is clicked.  Returns false if 'Item' is not found on the interface.
+
+Example
+-------
+.. code-block:: pascal  
+
+  if SilverScreen.CraftItem('Jade amulet (u)', 10) then
     Writeln('Beginning crafting...');
 
 

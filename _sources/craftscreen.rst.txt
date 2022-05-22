@@ -90,20 +90,40 @@ Example
 
 ------------
 
-TRSCraftScreen.ClickItem
+TRSCraftScreen.IsItemHighlighted
 ~~~~~~~~~~~~
 .. code-block:: pascal
 
- function TRSCraftScreen.ClickItem(Item: TRSItem; Quantity: Int32): Boolean;
+ function TRSCraftScreen.IsItemHighlighted(CraftItem: ERSCraftItem): Boolean;
 
-Sets the desired quantity then clicks on the given ERSCraftItem on the gold crafting
-interface.  Returns false if the given ERSCraftItem is not found on the interface.
+Returns if the given ERSCraftItem is highlighted on the crafting interface.
 
 Example
 -------
 .. code-block:: pascal  
 
-  if CraftScreen.ClickItem((ERSCraftItem.RUBY_AMULET, 5) then
+  if CraftScreen.IsItemHighlighted(ERSCraftItem.GOLD_BRACELET) then
+    Keyboard.PressKey(VK_SPACE);
+
+
+------------
+
+TRSCraftScreen.CraftItem
+~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSCraftScreen.CraftItem(Item: TRSItem; Quantity: Int32): Boolean;
+
+Sets the desired quantity then crafts the given ERSCraftItem on the gold crafting
+interface.  If the item is highlighted (previously crafted) then the spacebar is used,
+if not then the interface item is clicked.  Returns false if the given ERSCraftItem
+is not found on the interface.
+
+Example
+-------
+.. code-block:: pascal  
+
+  if CraftScreen.CraftItem(ERSCraftItem.RUBY_AMULET, 5) then
     Writeln('Beginning crafting...');
 
 
