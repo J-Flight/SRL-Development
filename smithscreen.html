@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TRSSmithScreen.IsOpen &mdash; SRL  documentation</title>
@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -151,13 +152,13 @@
            <div itemprop="articleBody">
              
   <section id="trssmithscreen-isopen">
-<h1>TRSSmithScreen.IsOpen<a class="headerlink" href="#trssmithscreen-isopen" title="Permalink to this headline"></a></h1>
+<h1>TRSSmithScreen.IsOpen<a class="headerlink" href="#trssmithscreen-isopen" title="Permalink to this heading"></a></h1>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSSmithScreen</span><span class="o">.</span><span class="nf">IsOpen</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Returns true if the smithing screen is visible.</p>
 <section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline"></a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">SmithScreen</span><span class="o">.</span><span class="n">IsOpen</span><span class="p">()</span> <span class="k">then</span>
   <span class="n">SmithScreen</span><span class="o">.</span><span class="n">ClickItem</span><span class="p">(</span><span class="s">&#39;Mithril platebody&#39;</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">;</span>
 </pre></div>
@@ -166,13 +167,13 @@
 </section>
 <hr class="docutils" />
 <section id="trssmithscreen-isopen-waittime-int32">
-<h1>TRSSmithScreen.IsOpen(WaitTime: Int32)<a class="headerlink" href="#trssmithscreen-isopen-waittime-int32" title="Permalink to this headline"></a></h1>
+<h1>TRSSmithScreen.IsOpen(WaitTime: Int32)<a class="headerlink" href="#trssmithscreen-isopen-waittime-int32" title="Permalink to this heading"></a></h1>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSSmithScreen</span><span class="o">.</span><span class="nf">IsOpen</span><span class="p">(</span><span class="n">WaitTime</span><span class="o">:</span> <span class="n">Int32</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Returns true if the smithing screen is visible within “WaitTime”.</p>
 <section id="id1">
-<h2>Example<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>Example<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">SmithScreen</span><span class="o">.</span><span class="n">IsOpen</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span> <span class="k">then</span>
   <span class="nb">Writeln</span><span class="p">(</span><span class="s">&#39;Smithing screen has been opened within 2 seconds&#39;</span><span class="p">)</span><span class="o">;</span>
 </pre></div>
@@ -181,14 +182,14 @@
 </section>
 <hr class="docutils" />
 <section id="trssmithscreen-close">
-<h1>TRSSmithScreen.Close<a class="headerlink" href="#trssmithscreen-close" title="Permalink to this headline"></a></h1>
+<h1>TRSSmithScreen.Close<a class="headerlink" href="#trssmithscreen-close" title="Permalink to this heading"></a></h1>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSSmithScreen</span><span class="o">.</span><span class="nf">Close</span><span class="p">(</span><span class="n">PressEscape</span><span class="o">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="k">False</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Closes the smithing screen.  Depending on <cite>PressEscape</cite> the function will
 either click the button or press backspace.</p>
 <section id="id2">
-<h2>Example<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>Example<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">SmithScreen</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span> <span class="k">then</span>
   <span class="nb">Writeln</span><span class="p">(</span><span class="s">&#39;Closed the smithing screen&#39;</span><span class="p">)</span><span class="o">;</span>
 </pre></div>
@@ -197,14 +198,14 @@ either click the button or press backspace.</p>
 </section>
 <hr class="docutils" />
 <section id="trssmithscreen-setquantity">
-<h1>TRSSmithScreen.SetQuantity<a class="headerlink" href="#trssmithscreen-setquantity" title="Permalink to this headline"></a></h1>
+<h1>TRSSmithScreen.SetQuantity<a class="headerlink" href="#trssmithscreen-setquantity" title="Permalink to this heading"></a></h1>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSSmithScreen</span><span class="o">.</span><span class="nf">SetQuantity</span><span class="p">(</span><span class="n">Amount</span><span class="o">:</span> <span class="n">Int32</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Sets the interface quantity to the set amount.  Acceptable parameters
 include 1,5,10,X (custom amount) and -1 for ‘All’.</p>
 <section id="id3">
-<h2>Example<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>Example<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">SmithScreen</span><span class="o">.</span><span class="n">SetQuantity</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">;</span>
 </pre></div>
 </div>
@@ -212,14 +213,14 @@ include 1,5,10,X (custom amount) and -1 for ‘All’.</p>
 </section>
 <hr class="docutils" />
 <section id="trssmithscreen-cansmithitem">
-<h1>TRSSmithScreen.CanSmithItem<a class="headerlink" href="#trssmithscreen-cansmithitem" title="Permalink to this headline"></a></h1>
+<h1>TRSSmithScreen.CanSmithItem<a class="headerlink" href="#trssmithscreen-cansmithitem" title="Permalink to this heading"></a></h1>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSSmithScreen</span><span class="o">.</span><span class="nf">CanSmithItem</span><span class="p">(</span><span class="n">Item</span><span class="o">:</span> <span class="n">TRSItem</span><span class="o">;</span> <span class="n">out</span> <span class="n">ItemBox</span><span class="o">:</span> <span class="n">TBox</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Returns if the given TRSItem can be smithed.  If so then a TBox of the disired item
 is returned.</p>
 <section id="id4">
-<h2>Example<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>Example<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">SmithScreen</span><span class="o">.</span><span class="n">CanSmithItem</span><span class="p">(</span><span class="s">&#39;Iron warhammer&#39;</span><span class="o">,</span> <span class="n">ItmBox</span><span class="p">)</span> <span class="k">then</span>
   <span class="n">Mouse</span><span class="o">.</span><span class="n">Move</span><span class="p">(</span><span class="n">ItmBox</span><span class="p">)</span><span class="o">;</span>
 </pre></div>
@@ -228,13 +229,13 @@ is returned.</p>
 </section>
 <hr class="docutils" />
 <section id="trssmithscreen-isitemhighlighted">
-<h1>TRSSmithScreen.IsItemHighlighted<a class="headerlink" href="#trssmithscreen-isitemhighlighted" title="Permalink to this headline"></a></h1>
+<h1>TRSSmithScreen.IsItemHighlighted<a class="headerlink" href="#trssmithscreen-isitemhighlighted" title="Permalink to this heading"></a></h1>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSSmithScreen</span><span class="o">.</span><span class="nf">IsItemHighlighted</span><span class="p">(</span><span class="n">Item</span><span class="o">:</span> <span class="n">TRSItem</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Returns if the given TRSItem is highlighted on the smithing interface.</p>
 <section id="id5">
-<h2>Example<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h2>
+<h2>Example<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">SmithScreen</span><span class="o">.</span><span class="n">IsItemHighlighted</span><span class="p">(</span><span class="s">&#39;Steel platebody&#39;</span><span class="p">)</span> <span class="k">then</span>
   <span class="n">Keyboard</span><span class="o">.</span><span class="n">PressKey</span><span class="p">(</span><span class="n">VK_SPACE</span><span class="p">)</span><span class="o">;</span>
 </pre></div>
@@ -243,7 +244,7 @@ is returned.</p>
 </section>
 <hr class="docutils" />
 <section id="trssmithscreen-smithitem">
-<h1>TRSSmithScreen.SmithItem<a class="headerlink" href="#trssmithscreen-smithitem" title="Permalink to this headline"></a></h1>
+<h1>TRSSmithScreen.SmithItem<a class="headerlink" href="#trssmithscreen-smithitem" title="Permalink to this heading"></a></h1>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSSmithScreen</span><span class="o">.</span><span class="nf">SmithItem</span><span class="p">(</span><span class="n">Item</span><span class="o">:</span> <span class="n">TRSItem</span><span class="o">;</span> <span class="n">Quantity</span><span class="o">:</span> <span class="n">Int32</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
@@ -251,7 +252,7 @@ is returned.</p>
 If the item is highlighted (previously smithed) then the spacebar is used,
 if not then the interface item is clicked.  Returns false if ‘Item’ is not found on the interface.</p>
 <section id="id6">
-<h2>Example<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h2>
+<h2>Example<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">SmithScreen</span><span class="o">.</span><span class="n">SmithItem</span><span class="p">(</span><span class="s">&#39;Adamant platelegs&#39;</span><span class="o">,</span> <span class="mi">5</span><span class="p">)</span> <span class="k">then</span>
   <span class="nb">Writeln</span><span class="p">(</span><span class="s">&#39;Beginning smithing...&#39;</span><span class="p">)</span><span class="o">;</span>
 </pre></div>

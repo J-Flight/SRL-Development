@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bank &mdash; SRL  documentation</title>
@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -147,11 +148,11 @@
            <div itemprop="articleBody">
              
   <section id="bank">
-<h1>Bank<a class="headerlink" href="#bank" title="Permalink to this headline"></a></h1>
+<h1>Bank<a class="headerlink" href="#bank" title="Permalink to this heading"></a></h1>
 <p>Methods to interact with the Bank.</p>
 <hr class="docutils" />
 <section id="bank-isopen">
-<h2>Bank.IsOpen<a class="headerlink" href="#bank-isopen" title="Permalink to this headline"></a></h2>
+<h2>Bank.IsOpen<a class="headerlink" href="#bank-isopen" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">IsOpen</span><span class="p">(</span><span class="n">WaitForItems</span><span class="o">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="k">True</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
@@ -161,14 +162,14 @@ There can be a small delay before items are visible.</p>
 </section>
 <hr class="docutils" />
 <section id="bank-close">
-<h2>Bank.Close<a class="headerlink" href="#bank-close" title="Permalink to this headline"></a></h2>
+<h2>Bank.Close<a class="headerlink" href="#bank-close" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">Close</span><span class="p">(</span><span class="n">PressEscape</span><span class="o">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="k">False</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Closes the bank, Depending on <cite>PressEscape</cite> the function will either click the button
 or press backspace.</p>
 <section id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline"></a></h3>
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h3>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span> <span class="n">Bank</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span><span class="o">;</span>
 </pre></div>
 </div>
@@ -176,7 +177,7 @@ or press backspace.</p>
 </section>
 <hr class="docutils" />
 <section id="bank-setup">
-<h2>Bank.Setup<a class="headerlink" href="#bank-setup" title="Permalink to this headline"></a></h2>
+<h2>Bank.Setup<a class="headerlink" href="#bank-setup" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span> <span class="nc">Bank</span><span class="o">.</span><span class="nf">Setup</span><span class="o">;</span>
 </pre></div>
 </div>
@@ -188,13 +189,13 @@ or press backspace.</p>
 </section>
 <hr class="docutils" />
 <section id="bank-search">
-<h2>Bank.Search<a class="headerlink" href="#bank-search" title="Permalink to this headline"></a></h2>
+<h2>Bank.Search<a class="headerlink" href="#bank-search" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">Search</span><span class="p">(</span><span class="n">Item</span><span class="o">:</span> <span class="k">String</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Searches for an item.</p>
 <section id="id1">
-<h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<h3>Example<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">Bank</span><span class="o">.</span><span class="n">Search</span><span class="p">(</span><span class="s">&#39;logs&#39;</span><span class="p">)</span><span class="o">;</span> <span class="c1">// Search for logs</span>
 </pre></div>
 </div>
@@ -202,13 +203,13 @@ or press backspace.</p>
 </section>
 <hr class="docutils" />
 <section id="bank-counttabs">
-<h2>Bank.CountTabs<a class="headerlink" href="#bank-counttabs" title="Permalink to this headline"></a></h2>
+<h2>Bank.CountTabs<a class="headerlink" href="#bank-counttabs" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">CountTabs</span><span class="o">:</span> <span class="n">Int32</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Counts the existing bank tabs.</p>
 <section id="id2">
-<h3>Example<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<h3>Example<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span> <span class="n">Bank</span><span class="o">.</span><span class="n">CountTabs</span><span class="o">;</span>
 </pre></div>
 </div>
@@ -216,13 +217,13 @@ or press backspace.</p>
 </section>
 <hr class="docutils" />
 <section id="bank-getcurrenttab">
-<h2>Bank.GetCurrentTab<a class="headerlink" href="#bank-getcurrenttab" title="Permalink to this headline"></a></h2>
+<h2>Bank.GetCurrentTab<a class="headerlink" href="#bank-getcurrenttab" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">GetCurrentTab</span><span class="o">:</span> <span class="n">Int32</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Get the current active bank tab.</p>
 <section id="id3">
-<h3>Example<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h3>
+<h3>Example<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span> <span class="n">Bank</span><span class="o">.</span><span class="n">GetCurrentTab</span><span class="o">;</span>
 </pre></div>
 </div>
@@ -230,13 +231,13 @@ or press backspace.</p>
 </section>
 <hr class="docutils" />
 <section id="bank-opentab">
-<h2>Bank.OpenTab<a class="headerlink" href="#bank-opentab" title="Permalink to this headline"></a></h2>
+<h2>Bank.OpenTab<a class="headerlink" href="#bank-opentab" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">OpenTab</span><span class="p">(</span><span class="n">Tab</span><span class="o">:</span> <span class="n">Int32</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Open the specified bank tab.</p>
 <section id="id4">
-<h3>Example<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h3>
+<h3>Example<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">Bank</span><span class="o">.</span><span class="n">OpenTab</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">;</span>
 </pre></div>
 </div>
@@ -244,14 +245,14 @@ or press backspace.</p>
 </section>
 <hr class="docutils" />
 <section id="trsbank-scrolltoitem">
-<h2>TRSBank.ScrollToItem<a class="headerlink" href="#trsbank-scrolltoitem" title="Permalink to this headline"></a></h2>
+<h2>TRSBank.ScrollToItem<a class="headerlink" href="#trsbank-scrolltoitem" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">ScrollToItem</span><span class="p">(</span><span class="n">Item</span><span class="o">:</span> <span class="n">TRSItem</span><span class="o">;</span> <span class="n">Out</span> <span class="n">ItmBox</span><span class="o">:</span> <span class="n">TBox</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Sets the scroll bar in the bank to its top position then drags the scroll bar until the
 given TRSItem is found or the scroll bar is dragged to the max position.</p>
 <section id="id5">
-<h3>Example<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<h3>Example<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">Bank</span><span class="o">.</span><span class="n">ScrollToItem</span><span class="p">(</span><span class="s">&#39;Lobster pot&#39;</span><span class="o">,</span> <span class="n">ItmBox</span><span class="p">)</span> <span class="k">then</span>
   <span class="n">Mouse</span><span class="o">.</span><span class="n">Move</span><span class="p">(</span><span class="n">ItmBox</span><span class="p">)</span><span class="o">;</span>
 </pre></div>
@@ -260,13 +261,13 @@ given TRSItem is found or the scroll bar is dragged to the max position.</p>
 </section>
 <hr class="docutils" />
 <section id="id6">
-<h2>TRSBank.ScrollToItem<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h2>
+<h2>TRSBank.ScrollToItem<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">ScrollToItem</span><span class="p">(</span><span class="n">Item</span><span class="o">:</span> <span class="n">TRSItem</span><span class="o">;</span> <span class="n">Out</span> <span class="n">ItmPoint</span><span class="o">:</span> <span class="n">TPoint</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Same as TRSBank.ScrollToItem however a TPoint of the middle of the found item is provided.</p>
 <section id="id7">
-<h3>Example<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
+<h3>Example<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h3>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">Bank</span><span class="o">.</span><span class="n">ScrollToItem</span><span class="p">(</span><span class="s">&#39;Lobster pot&#39;</span><span class="o">,</span> <span class="n">ItmPoint</span><span class="p">)</span> <span class="k">then</span>
   <span class="n">Mouse</span><span class="o">.</span><span class="n">Move</span><span class="p">(</span><span class="n">ItmPoint</span><span class="p">)</span><span class="o">;</span>
 </pre></div>
@@ -275,13 +276,13 @@ given TRSItem is found or the scroll bar is dragged to the max position.</p>
 </section>
 <hr class="docutils" />
 <section id="id8">
-<h2>TRSBank.ScrollToItem<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h2>
+<h2>TRSBank.ScrollToItem<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">ScrollToItem</span><span class="p">(</span><span class="n">Item</span><span class="o">:</span> <span class="n">TRSItem</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Same as TRSBank.ScrollToItem however only confirmation is provided.</p>
 <section id="id9">
-<h3>Example<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h3>
+<h3>Example<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h3>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">Bank</span><span class="o">.</span><span class="n">ScrollToItem</span><span class="p">(</span><span class="s">&#39;Lobster pot&#39;</span><span class="p">)</span> <span class="k">then</span>
   <span class="nb">writeln</span><span class="p">(</span><span class="s">&#39;Found the lobster pot&#39;</span><span class="p">)</span><span class="o">;</span>
 </pre></div>
@@ -290,13 +291,13 @@ given TRSItem is found or the scroll bar is dragged to the max position.</p>
 </section>
 <hr class="docutils" />
 <section id="bank-withdrawitem">
-<h2>Bank.WithdrawItem<a class="headerlink" href="#bank-withdrawitem" title="Permalink to this headline"></a></h2>
+<h2>Bank.WithdrawItem<a class="headerlink" href="#bank-withdrawitem" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">WithdrawItem</span><span class="p">(</span><span class="n">Item</span><span class="o">:</span> <span class="n">TRSBankWithdrawItem</span><span class="o">;</span> <span class="n">UseQuantityButtons</span><span class="o">:</span> <span class="kt">Boolean</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Finds and withdraws an item.</p>
 <section id="parameters">
-<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline"></a></h3>
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h3>
 <dl class="simple">
 <dt>Item</dt><dd><p>TRSBankWithdrawItem variable to withdraw.</p>
 </dd>
@@ -305,7 +306,7 @@ given TRSItem is found or the scroll bar is dragged to the max position.</p>
 </dl>
 </section>
 <section id="id10">
-<h3>Example<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h3>
+<h3>Example<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h3>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">var</span>
   <span class="n">ItemToWithdraw</span><span class="o">:</span> <span class="n">TRSBankWithdrawItem</span><span class="o">;</span>
 
@@ -324,7 +325,7 @@ given TRSItem is found or the scroll bar is dragged to the max position.</p>
 </section>
 <hr class="docutils" />
 <section id="bank-depositall">
-<h2>Bank.DepositAll<a class="headerlink" href="#bank-depositall" title="Permalink to this headline"></a></h2>
+<h2>Bank.DepositAll<a class="headerlink" href="#bank-depositall" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSBank</span><span class="o">.</span><span class="nf">DepositAll</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span>
 </pre></div>
 </div>
@@ -332,14 +333,14 @@ given TRSItem is found or the scroll bar is dragged to the max position.</p>
 </section>
 <hr class="docutils" />
 <section id="var-bank">
-<h2>var Bank<a class="headerlink" href="#var-bank" title="Permalink to this headline"></a></h2>
+<h2>var Bank<a class="headerlink" href="#var-bank" title="Permalink to this heading"></a></h2>
 <blockquote>
 <div><p>Global Bank variable.</p>
 </div></blockquote>
 </section>
 <hr class="docutils" />
 <section id="gametabs-open">
-<h2>GameTabs.Open<a class="headerlink" href="#gametabs-open" title="Permalink to this headline"></a></h2>
+<h2>GameTabs.Open<a class="headerlink" href="#gametabs-open" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSGameTabs</span><span class="o">.</span><span class="nf">GetCurrentTab</span><span class="o">:</span> <span class="n">ERSGametab</span><span class="o">;</span> <span class="kp">override</span><span class="o">;</span>
 </pre></div>
 </div>
@@ -347,7 +348,7 @@ given TRSItem is found or the scroll bar is dragged to the max position.</p>
 </section>
 <hr class="docutils" />
 <section id="id11">
-<h2>GameTabs.Open<a class="headerlink" href="#id11" title="Permalink to this headline"></a></h2>
+<h2>GameTabs.Open<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h2>
 <div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nc">TRSGameTabs</span><span class="o">.</span><span class="nf">Open</span><span class="p">(</span><span class="n">Tab</span><span class="o">:</span> <span class="n">ERSGameTab</span><span class="p">)</span><span class="o">:</span> <span class="kt">Boolean</span><span class="o">;</span> <span class="kp">override</span><span class="o">;</span>
 </pre></div>
 </div>
